@@ -1,3 +1,8 @@
+---
+layout: default
+title: Bingfan Tian
+---
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/BingfanTian96/NEU_CS5520_21Fall/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
