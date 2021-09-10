@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 name: Bingfan Tian
 markdown: kramdown
+permalink: /[NEU_CS5520_21Fall]/:year/:month/:day/:title
