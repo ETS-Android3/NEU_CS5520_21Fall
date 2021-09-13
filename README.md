@@ -23,12 +23,12 @@ The main purpose of this lesson is to understand Android Studio and create the f
 
 ### Homework:
 - **Question 1**: What is the name of the layout file for the main activity?
-		- `activity_main.xml`
+	- `activity_main.xml`
 - **Question 2**: What is the name of the string resource that specifies the application's name?
-		- `app_name`
+	- `app_name`
 - **Question 3**: Which tool do you use to create a new emulator?
-		- `AVD Manager`
+	- `AVD Manager`
 - **Question 4**: You see the statement in the **Logcat** pane if the Log level menu is set to which of the following?
-		- `Verbose`
-		- `Debug`
-		- `Info`
+	- `Verbose`
+	- `Debug`
+	- `Info`
