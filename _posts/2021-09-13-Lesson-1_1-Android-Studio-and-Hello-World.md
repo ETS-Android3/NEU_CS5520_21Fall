@@ -4,7 +4,6 @@ title: "Lesson 1_1 Android Studio and Hello World"
 date: 2021-09-13
 ---
 
-# Lesson 1_1 Android Studio and Hello World
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_1) to my code.
 
 ## Output:
