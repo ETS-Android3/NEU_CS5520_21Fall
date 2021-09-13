@@ -1,9 +1,8 @@
-package com.example.helloworld;
-
-import android.os.Bundle;
-import android.util.Log;
+package edu.neu.mad_sea.bingfantian.lesson1_1;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +10,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("MainActivity", "Hello World");
     }
 }

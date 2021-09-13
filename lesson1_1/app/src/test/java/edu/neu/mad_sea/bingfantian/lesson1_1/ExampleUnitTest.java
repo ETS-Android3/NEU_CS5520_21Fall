@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package edu.neu.mad_sea.bingfantian.lesson1_1;
 
 import org.junit.Test;
 

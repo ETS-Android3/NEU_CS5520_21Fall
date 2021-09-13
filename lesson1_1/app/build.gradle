@@ -6,8 +6,8 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.helloworld"
-        minSdk 17
+        applicationId "edu.neu.mad_sea.bingfantian.lesson1_1"
+        minSdk 16
         targetSdk 31
         versionCode 1
         versionName "1.0"
