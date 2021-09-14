@@ -67,11 +67,11 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p4.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p5.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p6.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p7.png" width="300" />
-  	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p8.png" width="300" /> 
+	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p4.png" />
+    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p5.png" />
+    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p6.png" />
+    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p7.png" width="300" />
+  	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p8.png" width="300" /> 
 </p>
 P1: Horizontal Layout:  
 P2: Layout variant for tablets.  
@@ -102,13 +102,12 @@ The main purpose of this lesson is to learn how to use layout editor and other t
 		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW5.png" width="300"/>
 		- Click `zero` button, then number in textView will become 0. `Count` button will change background color. `Zero` button also change background color.
 
-- **Question 1**: What is the name of the layout file for the main activity?
-		- `activity_main.xml`
-- **Question 2**: What is the name of the string resource that specifies the application's name?
-		- `app_name`
-- **Question 3**: Which tool do you use to create a new emulator?
-		- `AVD Manager`
+- **Question 1**: Which two layout constraint attributes on the **Zero** `Button` position it vertically equal distance between the other two `Button` elements?
+	-  `android:layout_marginBottom="8dp"``
+	-  `android:layout_marginTop="8dp"``
+- **Question 2**: Which layout constraint attribute on the **Zero** `Button` positions it horizontally in alignment with the other two `Button` elements?
+	-  `app:layout_constraintLeft_toLeftOf="parent"`
+- **Question 3**: What is the correct signature for a method used with the `android:onClick` XML attribute?
+	-   `public void callMethod(View view)`
 - **Question 4**: You see the statement in the **Logcat** pane if the Log level menu is set to which of the following?
-		- `Verbose`
-		- `Debug`
-		- `Info`
+	- Use the  `view`  parameter that is passed to the click handler with `setBackgroundColor()`
