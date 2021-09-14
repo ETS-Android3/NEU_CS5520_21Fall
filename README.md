@@ -12,7 +12,9 @@ Here is the lessions that I took during this semester.
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_1) to my code.
 
 ### Output:
-![Lesson 1_1 output](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/Lesson%201_1.png)
+<p float="left">
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/Lesson%201_1.png" width="300" />
+</p>
 
 The main purpose of this lesson is to understand Android Studio and create the first Hello World application:
 
@@ -38,9 +40,9 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="400" />
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="400" /> 
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="400" />
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="300" />
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="300" /> 
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="300" />
 </p>
 
 P1: Output overview:  
