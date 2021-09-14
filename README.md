@@ -37,10 +37,11 @@ The main purpose of this lesson is to understand Android Studio and create the f
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_2) to my code.
 
 ### Output:
-P1: Output overview:
-P2: Click `TOAST` button to pop up a toast message.
-P3:Click `COUNT` button to increase the count in the text view.
-![Lesson 1_2 output overview](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png)![Lesson 1_2 toast function](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png)![Lesson 1_2 count function](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png)
+<p float="left">
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="100" />
+  <img src="/https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="100" /> 
+  <img src="/https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="100" />
+</p>
 
 
 
