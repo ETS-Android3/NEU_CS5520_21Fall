@@ -38,7 +38,7 @@ The main purpose of this lesson is to learn how to use layout editor and other t
 	- Function
 		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW3.png" width="300"/>
 		- Click `count` button, then number in textView will increase. `Zero` button will change background  color because it is not Zero now. `Count` button will change background color because the number is odd.
-		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW4.png"/>
+		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW4.png" width="300"/>
 		- Click `count` button, then number in textView will increase. `Count` button will change background color because the number is even.
 		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW5.png" width="300"/>
 		- Click `zero` button, then number in textView will become 0. `Count` button will change background color. `Zero` button also change background color.
