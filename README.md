@@ -73,11 +73,11 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
     	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p7.png" width="300" />
   	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p8.png" width="300" /> 
 </p>
-P1: Horizontal Layout:   
-P2: Layout variant for tablets.   
-P3: Horizontal layout variant for tablets.   
-P4: LinearLayout.   
-P5: RelativeLayout.    
+P1: Horizontal Layout:<br>   
+P2: Layout variant for tablets. <br>  
+P3: Horizontal layout variant for tablets.  <br> 
+P4: LinearLayout.   <br>
+P5: RelativeLayout.    <br>
  
 The main purpose of this lesson is to learn how to use layout editor and other two different layout :
 
