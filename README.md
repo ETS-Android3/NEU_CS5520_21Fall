@@ -32,3 +32,23 @@ The main purpose of this lesson is to understand Android Studio and create the f
 	- `Verbose`
 	- `Debug`
 	- `Info`
+
+## Lesson 1_2_A First Interactive UI
+Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_2) to my code.
+
+### Output:
+![Lesson 1_2 output overview](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png)
+![Lesson 1_2 toast function](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png)
+![Lesson 1_2 count function](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png)
+
+The main purpose of this lesson is to understand View, ViewGroup and layouts. :
+
+- All UI elements are subclasses of the `View` class, they are resources that can have an id. The `findViewById` call use the ID of a `View` as its parameter and return the `View`. 
+- Learn how to use layout editor to design and edit the activity page. We can edit by `Design` view or `Code` view.
+- There are three ways to set `layout_width` and `layout_height`:
+	- The `match_constraint`.
+	- The `wrap_content`.
+	- A fixed number of `dp`.
+- We can use `Ectracting string resources` to avoied hardcoded text.
+- Learn how to create an `onClick` event.
+- Learn hwo to display a toast message.
