@@ -38,9 +38,9 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="200" />
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="200" /> 
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="200" />
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="400" />
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="400" /> 
+  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="400" />
 </p>
 
 P1: Output overview:  
