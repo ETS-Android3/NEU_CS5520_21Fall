@@ -73,12 +73,12 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
     	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p7.png" width="300" />
   	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p8.png" width="300" /> 
 </p>
-P1: Horizontal Layout:  
-P2: Layout variant for tablets.  
-P3: Horizontal layout variant for tablets.  
-P4: LinearLayout.  
-P5: RelativeLayout.  
-
+P1: Horizontal Layout:   
+P2: Layout variant for tablets.   
+P3: Horizontal layout variant for tablets.   
+P4: LinearLayout.   
+P5: RelativeLayout.    
+ 
 The main purpose of this lesson is to learn how to use layout editor and other two different layout :
 
 - -   Learn how to create variant of the layout that is different for a horizontal orientation, and to create variant of the layout that is different for a tablet
@@ -103,8 +103,8 @@ The main purpose of this lesson is to learn how to use layout editor and other t
 		- Click `zero` button, then number in textView will become 0. `Count` button will change background color. `Zero` button also change background color.
 
 - **Question 1**: Which two layout constraint attributes on the **Zero** `Button` position it vertically equal distance between the other two `Button` elements?
-	-  `android:layout_marginBottom="8dp"``
-	-  `android:layout_marginTop="8dp"``
+	-  `android:layout_marginBottom="8dp"`
+	-  `android:layout_marginTop="8dp"`
 - **Question 2**: Which layout constraint attribute on the **Zero** `Button` positions it horizontally in alignment with the other two `Button` elements?
 	-  `app:layout_constraintLeft_toLeftOf="parent"`
 - **Question 3**: What is the correct signature for a method used with the `android:onClick` XML attribute?
