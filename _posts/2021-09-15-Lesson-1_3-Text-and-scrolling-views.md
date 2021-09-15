@@ -8,9 +8,8 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-    <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p1.png" width="300" />
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p2.png" width="300" /> 
-
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p1.png" width="300" />
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p2.png" width="300" /> 
 </p>
 P1: Top of scrolling views  
 P2: Bottom of scrolling views 
@@ -25,7 +24,7 @@ The main purpose of this lesson is to learn how to use `ScrollView` to show its 
 ### Homework:
 - **Change an app**
 	- Overview:
-	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p3.png" width="300"/>
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p3.png" width="300"/>
 
 - **Question 1**: How many views can you use within a `ScrollView`? Choose one:
 	-  One view or one view group
