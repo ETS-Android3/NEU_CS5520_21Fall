@@ -6,8 +6,9 @@ date: 2021-09-13
 
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_1) to my code.
 
-## Output:
-![Lesson 1_1 output](https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/Lesson%201_1.png)
+### Output:
+
+<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/Lesson%201_1.png" width="300" />
 
 The main purpose of this lesson is to understand Android Studio and create the first Hello World application:
 
@@ -16,7 +17,7 @@ The main purpose of this lesson is to understand Android Studio and create the f
 - Learn how to change the application Gradle configuration.
 - Learn how to add log statements to my app.
 
-## Homework:
+### Homework:
 - **Question 1**: What is the name of the layout file for the main activity?
 	- `activity_main.xml`
 - **Question 2**: What is the name of the string resource that specifies the application's name?
@@ -27,4 +28,3 @@ The main purpose of this lesson is to understand Android Studio and create the f
 	- `Verbose`
 	- `Debug`
 	- `Info`
-
