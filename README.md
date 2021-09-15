@@ -12,9 +12,8 @@ Here is the lessions that I took during this semester.
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/lesson1_1) to my code.
 
 ### Output:
-<p float="left">
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/Lesson%201_1.png" width="300" />
-</p>
+
+<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/Lesson%201_1.png" width="300" />
 
 The main purpose of this lesson is to understand Android Studio and create the first Hello World application:
 
@@ -40,9 +39,9 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p1.png" width="300" />
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p2.png" width="300" /> 
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson%201_2%20p3.png" width="300" />
+  <img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson%201_2%20p1.png" width="300" />
+  <img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson%201_2%20p2.png" width="300" /> 
+  <img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson%201_2%20p3.png" width="300" />
 </p>
 
 P1: Output overview:  
@@ -67,11 +66,11 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p4.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p5.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p6.png" />
-    	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p7.png" width="300" />
-  	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_2%20p8.png" width="300" /> 
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_2%20p4.png" />
+    	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_2%20p5.png" />
+    	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_2%20p6.png" />
+    	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_2%20p7.png" width="300" />
+  	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_2%20p8.png" width="300" /> 
 </p>
 P1: Horizontal Layout:<br>
 P2: Layout variant for tablets.<br>
@@ -91,17 +90,17 @@ The main purpose of this lesson is to learn how to use layout editor and other t
 - **Change an app**
 	- Overview:
 		<p float="left">
-			<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW1.png" width="300"/>
-			<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW2.png"/>
+			<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW1.png" width="300"/>
+			<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW2.png"/>
 		</p>
 	- Function
-		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW3.png" width="300"/>
 		- Click `count` button, then number in textView will increase. `Zero` button will change background  color because it is not Zero now. `Count` button will change background color because the number is odd.
-		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW4.png"/>
+		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW3.png" width="300"/>
 		- Click `count` button, then number in textView will increase. `Count` button will change background color because the number is even.
-		- <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/HW5.png" width="300"/>
+		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW4.png"/>
 		- Click `zero` button, then number in textView will become 0. `Count` button will change background color. `Zero` button also change background color.
-
+		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW5.png" width="300"/>
+		
 - **Question 1**: Which two layout constraint attributes on the **Zero** `Button` position it vertically equal distance between the other two `Button` elements?
 	-  `android:layout_marginBottom="8dp"`
 	-  `android:layout_marginTop="8dp"`
@@ -117,9 +116,8 @@ Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/
 
 ### Output:
 <p float="left">
-    <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p1.png" width="300" />
-  <img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p2.png" width="300" /> 
-
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p1.png" width="300" />
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p2.png" width="300" /> 
 </p>
 P1: Top of scrolling views  
 P2: Bottom of scrolling views 
@@ -134,7 +132,7 @@ The main purpose of this lesson is to learn how to use `ScrollView` to show its 
 ### Homework:
 - **Change an app**
 	- Overview:
-	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p3.png" width="300"/>
+	<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/lesson1_3_p3.png" width="300"/>
 
 - **Question 1**: How many views can you use within a `ScrollView`? Choose one:
 	-  One view or one view group
