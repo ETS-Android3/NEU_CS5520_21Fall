@@ -134,7 +134,7 @@ The main purpose of this lesson is to learn how to use `ScrollView` to show its 
 ### Homework:
 - **Change an app**
 	- Overview:
-	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p3" width="300"/>
+	<img src="https://github.com/BingfanTian96/NEU_CS5520_21Fall/blob/gh-pages/res/lesson1_3_p3.png" width="300"/>
 
 - **Question 1**: How many views can you use within a `ScrollView`? Choose one:
 	-  One view or one view group
