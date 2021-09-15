@@ -33,13 +33,13 @@ The main purpose of this lesson is to learn how to use layout editor and other t
 	- Overview:
 		<p float="left">
 			<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW1.png" width="300"/>
-			<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW2.png"/>
+			<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW2.png" width="500"/>
 		</p>
 	- Function
 		- Click `count` button, then number in textView will increase. `Zero` button will change background  color because it is not Zero now. `Count` button will change background color because the number is odd.
 		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW3.png" width="300"/>
 		- Click `count` button, then number in textView will increase. `Count` button will change background color because the number is even.
-		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW4.png"/>
+		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW4.png" width="500"/>
 		- Click `zero` button, then number in textView will become 0. `Count` button will change background color. `Zero` button also change background color.
 		<img src="https://raw.githubusercontent.com/BingfanTian96/NEU_CS5520_21Fall/gh-pages/res/HW5.png" width="300"/>
 		
