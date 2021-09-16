@@ -51,9 +51,11 @@ public class MainActivity extends AppCompatActivity {
         if (mShowCount != null)
             mShowCount.setText(Integer.toString(mCount));
         if (mCount % 2 == 1)
-            countButton.setBackgroundColor(getResources().getColor(R.color.green));
+            //countButton.setBackgroundColor(getResources().getColor(R.color.green));
+            view.setBackgroundColor(getResources().getColor(R.color.green));
         else
-            countButton.setBackgroundColor(getResources().getColor(R.color.blue));
+            //countButton.setBackgroundColor(getResources().getColor(R.color.blue));
+            view.setBackgroundColor(getResources().getColor(R.color.blue));
     }
 
     /*
@@ -67,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
         mCount = 0;
         if (mShowCount != null)
             mShowCount.setText(Integer.toString(mCount));
-
-        zeroButton.setBackgroundColor(getResources().getColor(R.color.grey));
+        //zeroButton.setBackgroundColor(getResources().getColor(R.color.grey));
+        view.setBackgroundColor(getResources().getColor(R.color.grey));
         countButton.setBackgroundColor(getResources().getColor(R.color.blue));
     }
 }
