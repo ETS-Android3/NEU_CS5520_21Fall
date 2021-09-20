@@ -30,13 +30,13 @@ The main purpose of this lesson is to learn how to implement multiple `Activity`
 - **Build and run an app**
 
 - **Question 1**: What changes are made when you add a second `Activity` to your app by choosing **File > New > Activity** and an `Activity` template? Choose one:
-	-  
+
 - **Question 2**: What happens if you remove the `android:parentActivityName` and the `<meta-data>` elements from the second `Activity` declaration in the `AndroidManifest.xml` file? Choose one:
-	- 
+
 - **Question 3**: Which constructor method do you use to create a new explicit `Intent`? Choose one:
-	-  
+
 - **Question 4**: In the HelloToast app homework, how do you add the current value of the count to the `Intent`? Choose one:
-	-  
+
 - **Question 5**: In the HelloToast app homework, how do you display the current count in the second "Hello" `Activity`? Choose one:
 
 ## Lesson 1_3 Text and scrolling views
