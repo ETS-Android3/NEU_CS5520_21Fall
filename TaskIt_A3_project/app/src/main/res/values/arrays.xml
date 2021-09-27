@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="tags">
+        <item>todo</item>
+        <item>done</item>
+        <item>doing</item>
+        <item>close</item>
+    </string-array>
+</resources>

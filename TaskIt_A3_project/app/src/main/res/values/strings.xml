@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Todo:BT</string>
+    <string name="remind_me_text">Remind me?</string>
+    <string name="deadline_text">Deadline</string>
+    <string name="details_text">Task details</string>
+    <string name="title_text">Task Title</string>
+    <string name="remind_day_text">Day to remind</string>
+    <string name="save_text">Save</string>
+    <string name="cancel_text">cancel</string>
+    <string name="tasktitle">Sample task1</string>
+    <string name="sample_task_title">Sample task</string>
+    <string name="sample_task_date">Here will be a date</string>
 </resources>

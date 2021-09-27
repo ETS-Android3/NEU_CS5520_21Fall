@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskIt">
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,12 +20,19 @@
         </activity>
         <activity
             android:name=".New_Task"
-            android:label = "New Task"
+            android:label="New Task"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=
-                    ".MainActivity" />
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Edit_Task"
+            android:label="Edit Task"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
         </activity>
     </application>
 
