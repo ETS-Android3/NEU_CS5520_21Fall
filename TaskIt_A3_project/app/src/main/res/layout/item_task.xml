@@ -5,10 +5,10 @@
     android:orientation="horizontal">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/taskCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:focusable="false"
         />
 
@@ -23,16 +23,14 @@
             android:id="@+id/item_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:text="Title"
+            android:text="@string/sample_task_title"
             android:textSize="24dp" />
 
         <TextView
             android:id="@+id/item_sub_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-            android:text="sub title" />
+            android:text="@string/sample_task_date" />
     </LinearLayout>
 
 

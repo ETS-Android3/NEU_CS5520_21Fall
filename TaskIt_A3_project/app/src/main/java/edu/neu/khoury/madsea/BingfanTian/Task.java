@@ -1,22 +1,51 @@
 package edu.neu.khoury.madsea.BingfanTian;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Task {
+public class Task implements Serializable {
+
+    private int id;
+    private int status;
+
     private String title;
     private String detail;
-    private String tag;
+    private int tagPosition;
     private Date deadLine;
     private boolean remind;
     private Date dateToRemind;
+    private final java.text.SimpleDateFormat formatter = new SimpleDateFormat( "MM-dd-yyyy");
 
-    public Task(String title, String detail, String tag, Date deadLine, boolean remind, Date dateToRemind) {
+    public Task(int id, int status, String title, String detail, int tagPosition, Date deadLine, boolean remind, Date dateToRemind) {
+        this.id = id;
+        this.status = status;
         this.title = title;
         this.detail = detail;
-        this.tag = tag;
+        this.tagPosition = tagPosition;
         this.deadLine = deadLine;
         this.remind = remind;
         this.dateToRemind = dateToRemind;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public String getTitle() {
@@ -35,12 +64,12 @@ public class Task {
         this.detail = detail;
     }
 
-    public String getTag() {
-        return tag;
+    public int getTagPosition() {
+        return tagPosition;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setTagPosition(int tagPosition) {
+        this.tagPosition = tagPosition;
     }
 
     public Date getDeadLine() {
@@ -65,5 +94,9 @@ public class Task {
 
     public void setDateToRemind(Date dateToRemind) {
         this.dateToRemind = dateToRemind;
+    }
+
+    public SimpleDateFormat getFormatter() {
+        return formatter;
     }
 }

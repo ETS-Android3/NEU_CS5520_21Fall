@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/task_title" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/tagSponner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,10 +61,10 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/tagSponner" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/isRemind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -87,7 +87,7 @@
         android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/isRemind" />
 
 
     <Button
@@ -100,7 +100,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cancel_button" />
+        app:layout_constraintStart_toEndOf="@+id/cancel_button"
+        android:onClick="editCurTask"/>
 
     <Button
         android:id="@+id/cancel_button"
@@ -112,5 +113,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/save_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="cancelEdit"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

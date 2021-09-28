@@ -10,7 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TasksAdapter extends ArrayAdapter<Task> {
 
@@ -27,8 +29,13 @@ public class TasksAdapter extends ArrayAdapter<Task> {
         TextView item_title = (TextView) convertView.findViewById(R.id.item_title);
         TextView item_sub = (TextView) convertView.findViewById(R.id.item_sub_title);
         item_title.setText(cur_task.getTitle());
-        item_sub.setText(cur_task.getDeadLine().toString());
-
+        java.text.SimpleDateFormat formatter = new SimpleDateFormat( "EEE MM-dd-yyyy");
+        item_sub.setText(reformatDateString(formatter.format(cur_task.getDeadLine())));
         return convertView;
+    }
+
+    private String reformatDateString(String initial){
+        String result = initial.replaceAll("-", "/");
+        return result;
     }
 }
