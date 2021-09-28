@@ -1,7 +1,6 @@
-package edu.neu.khoury.madsea.BingfanTian;
+package edu.neu.khoury.madsea.BingfanTian.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +11,18 @@ import androidx.annotation.NonNull;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
+import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.R;
+
+
+
+/* ====================
+ *   this version is created for listView,
+ *   it will not be used, because now i'm using recyclerView,
+ *   just for a backup
+ *
+ */
 public class TasksAdapter extends ArrayAdapter<Task> {
 
     public TasksAdapter(@NonNull Context context, ArrayList<Task> tasks) {

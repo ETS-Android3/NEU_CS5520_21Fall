@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
@@ -7,16 +7,17 @@
     <CheckBox
         android:id="@+id/taskCheckBox"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:focusable="false"
-        />
+        android:focusable="false" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         android:orientation="vertical"
+        android:focusable="false"
+        android:layout_toEndOf="@+id/taskCheckBox"
         >
 
         <TextView
@@ -24,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/sample_task_title"
-            android:textSize="24dp" />
+            android:textSize="24dp"/>
 
         <TextView
             android:id="@+id/item_sub_title"
@@ -34,4 +35,4 @@
     </LinearLayout>
 
 
-</LinearLayout>
+</RelativeLayout>

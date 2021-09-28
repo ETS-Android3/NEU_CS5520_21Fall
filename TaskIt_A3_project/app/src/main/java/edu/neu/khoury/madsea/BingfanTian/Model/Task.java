@@ -1,4 +1,4 @@
-package edu.neu.khoury.madsea.BingfanTian;
+package edu.neu.khoury.madsea.BingfanTian.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

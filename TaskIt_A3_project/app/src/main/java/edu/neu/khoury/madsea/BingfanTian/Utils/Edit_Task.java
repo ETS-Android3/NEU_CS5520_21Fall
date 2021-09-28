@@ -1,4 +1,4 @@
-package edu.neu.khoury.madsea.BingfanTian;
+package edu.neu.khoury.madsea.BingfanTian.Utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.widget.Spinner;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+
+import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class Edit_Task extends AppCompatActivity {
 

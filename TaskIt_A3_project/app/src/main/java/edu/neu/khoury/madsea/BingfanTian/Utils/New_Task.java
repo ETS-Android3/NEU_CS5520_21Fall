@@ -1,4 +1,4 @@
-package edu.neu.khoury.madsea.BingfanTian;
+package edu.neu.khoury.madsea.BingfanTian.Utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,9 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class New_Task extends AppCompatActivity {
 
@@ -52,7 +55,7 @@ public class New_Task extends AppCompatActivity {
         mIsRemind = findViewById(R.id.isRemind);
         mRemind_date = findViewById(R.id.remind_date);
 
-        if (mTaskTitle.getText() != null) {
+        if (!mTaskTitle.getText().toString().equals("")) {
             title = mTaskTitle.getText().toString();
             detail = mTaskDetail.getText().toString();
             tag = mTagSpinner.getSelectedItemPosition();

@@ -1,4 +1,4 @@
-package edu.neu.khoury.madsea.BingfanTian;
+package edu.neu.khoury.madsea.BingfanTian.Utils;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +15,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import edu.neu.khoury.madsea.BingfanTian.Adapter.Task_Adapter;
+import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
         tasksAdapter = new Task_Adapter(this);
         tasksRecyclerView.setAdapter(tasksAdapter);
 
+        tasksAdapter.setOnItemClickListener(new Task_Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Task curTask = tasksList.get(position);
+                Intent intent = new Intent(MainActivity.this, Edit_Task.class);
+                intent.putExtra(TEXT_SEND, (Serializable) curTask);
+                startActivity(intent);
+            }
+        });
         Task task1 = new Task(1, 0, "titel1", "this is a sample task",
                 0, new Date(), false, null);
         Task task2 = new Task(2, 0, "titel2", "this is a sample task",

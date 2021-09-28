@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskIt">
         <activity
-            android:name=".MainActivity"
+            android:name=".Utils.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,20 +19,20 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".New_Task"
+            android:name=".Utils.New_Task"
             android:label="New Task"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Utils.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Utils.MainActivity" />
         </activity>
         <activity
-            android:name=".Edit_Task"
+            android:name=".Utils.Edit_Task"
             android:label="Edit Task"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".Utils.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Utils.MainActivity" />
         </activity>
     </application>
 
