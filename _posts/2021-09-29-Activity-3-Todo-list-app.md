@@ -4,8 +4,6 @@ title: "Activity 3 Todo list app"
 date: 2021-09-29
 ---
 
-
-## Activity 3 Todo list app
 Here is the [Link](https://github.com/BingfanTian96/NEU_CS5520_21Fall/tree/main/TaskIt_A3_project) to my code. 
 
 ### Output:
