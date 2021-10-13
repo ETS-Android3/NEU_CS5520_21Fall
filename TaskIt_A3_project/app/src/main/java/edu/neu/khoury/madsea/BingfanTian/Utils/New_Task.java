@@ -40,8 +40,6 @@ public class New_Task extends AppCompatActivity {
     private CheckBox mIsRemind;
     private EditText mRemind_date;
 
-    private DatabaseHandler db;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

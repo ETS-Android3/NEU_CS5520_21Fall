@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.Database.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class Edit_Task extends AppCompatActivity {
@@ -55,7 +55,7 @@ public class Edit_Task extends AppCompatActivity {
         mTagSpinner.setSelection(curTask.getTagPosition());
         java.text.SimpleDateFormat input_formatter = new SimpleDateFormat( "MM-dd-yyyy");
         mDdlDate.setText(reformatInputDateString(input_formatter.format(curTask.getDeadLine())));
-        if (curTask.isRemind() == 1){
+        if (curTask.getIsRemind() == 1){
             mIsRemind.setSelected(true);
             mRemind_date.setText(reformatInputDateString(input_formatter.format(curTask.getDateToRemind())));
         } else {

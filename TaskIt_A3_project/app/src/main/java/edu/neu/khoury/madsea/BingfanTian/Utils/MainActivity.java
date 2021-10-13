@@ -8,17 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import edu.neu.khoury.madsea.BingfanTian.Adapter.Task_Adapter;
 import edu.neu.khoury.madsea.BingfanTian.Database.TaskListAdapter;
 import edu.neu.khoury.madsea.BingfanTian.Database.TaskViewModel;
 import edu.neu.khoury.madsea.BingfanTian.Database.Task;
@@ -35,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView tasksRecyclerView;
     private TaskViewModel mTaskViewModel;
-    private Task_Adapter tasksAdapter;
-    private List<Task> tasksList;
+      private List<Task> tasksList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
