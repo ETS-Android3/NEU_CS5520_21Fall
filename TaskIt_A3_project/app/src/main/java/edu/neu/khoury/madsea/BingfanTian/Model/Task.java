@@ -10,34 +10,23 @@ import java.util.Date;
 
 public class Task implements Serializable {
 
-    private int id;
     private int status;
-
     private String title;
     private String detail;
     private int tagPosition;
     private Date deadLine;
-    private boolean remind;
+    private int isRemind;
     private Date dateToRemind;
     private final java.text.SimpleDateFormat formatter = new SimpleDateFormat( "MM-dd-yyyy");
 
-    public Task(int id, int status, String title, String detail, int tagPosition, Date deadLine, boolean remind, Date dateToRemind) {
-        this.id = id;
+    public Task(int status, String title, String detail, int tagPosition, Date deadLine, int remind, Date dateToRemind) {
         this.status = status;
         this.title = title;
         this.detail = detail;
         this.tagPosition = tagPosition;
         this.deadLine = deadLine;
-        this.remind = remind;
+        this.isRemind = remind;
         this.dateToRemind = dateToRemind;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getStatus() {
@@ -80,12 +69,12 @@ public class Task implements Serializable {
         this.deadLine = deadLine;
     }
 
-    public boolean isRemind() {
-        return remind;
+    public int isRemind() {
+        return isRemind;
     }
 
-    public void setRemind(boolean remind) {
-        this.remind = remind;
+    public void setRemind(int remind) {
+        this.isRemind = remind;
     }
 
     public Date getDateToRemind() {

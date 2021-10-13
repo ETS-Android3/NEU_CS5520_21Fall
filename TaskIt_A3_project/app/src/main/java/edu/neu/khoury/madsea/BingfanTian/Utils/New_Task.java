@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -15,7 +16,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import edu.neu.khoury.madsea.BingfanTian.Model.Task;
+import edu.neu.khoury.madsea.BingfanTian.Database.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class New_Task extends AppCompatActivity {
@@ -29,7 +30,7 @@ public class New_Task extends AppCompatActivity {
     private String detail;
     private int tag;
     private String deadLine;
-    private boolean remind;
+    private boolean isRemind;
     private String dateToRemind;
 
     private EditText mTaskTitle;
@@ -39,12 +40,13 @@ public class New_Task extends AppCompatActivity {
     private CheckBox mIsRemind;
     private EditText mRemind_date;
 
+    private DatabaseHandler db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_new_task);
-
     }
 
     public void createNewTask(View view) throws ParseException {
@@ -60,27 +62,30 @@ public class New_Task extends AppCompatActivity {
             detail = mTaskDetail.getText().toString();
             tag = mTagSpinner.getSelectedItemPosition();
             deadLine = mDdlDate.getText().toString();
-            remind = mIsRemind.isChecked();
+            isRemind = mIsRemind.isChecked();
             dateToRemind = mRemind_date.getText().toString();
 
-            java.text.SimpleDateFormat formatter = new SimpleDateFormat( "MM-dd-yyyy");
-            Date deadLine_date =  formatter.parse(reformatDateString(deadLine));
-            Date remind_date = null;
-            if (remind)
-                remind_date =  formatter.parse(reformatDateString(dateToRemind));
+            java.text.SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+//            Date deadLine_date = formatter.parse(reformatDateString(deadLine));
+//            Date remind_date = null;
+            int remindMark = 0;
+            if (isRemind) {
+//                remind_date = formatter.parse(reformatDateString(dateToRemind));
+                remindMark = 1;
+            }
 
-            Task newTask = new Task(1, 0, title, detail, tag, deadLine_date, remind, remind_date);
-
+            Task newTask = new Task(title, 0, detail, tag, deadLine, remindMark, dateToRemind);
+//            db = new DatabaseHandler(getActivity());
             Log.d(LOG_TAG, newTask.toString());
 
-        Log.d(LOG_TAG, "New Task create successful");
-        Log.d(LOG_TAG, "-------");
+            Log.d(LOG_TAG, "New Task create successful");
+            Log.d(LOG_TAG, "-------");
 
-        Intent replyIntent = new Intent();
-        replyIntent.putExtra(EXTRA_REPLY, (Serializable) newTask);
-        setResult(RESULT_OK, replyIntent);
-        Log.d(LOG_TAG, "End Create new Task");
-        finish();
+            Intent replyIntent = new Intent();
+            replyIntent.putExtra(EXTRA_REPLY, (Serializable) newTask);
+            setResult(RESULT_OK, replyIntent);
+            Log.d(LOG_TAG, "End Create new Task");
+            finish();
         }
     }
 
@@ -89,7 +94,7 @@ public class New_Task extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private String reformatDateString(String initial){
+    private String reformatDateString(String initial) {
         return initial.replaceAll("/", "-");
     }
 }
