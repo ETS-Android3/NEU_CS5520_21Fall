@@ -4,15 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
-import edu.neu.khoury.madsea.BingfanTian.Database.Task;
+import edu.neu.khoury.madsea.BingfanTian.Database.TaskRepository;
+import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
 public class Edit_Task extends AppCompatActivity {
@@ -20,13 +21,15 @@ public class Edit_Task extends AppCompatActivity {
     private static final String LOG_TAG =
             New_Task.class.getSimpleName();
 
-    public static final String EXTRA_REPLY =
-            "editedTask";
+    private Task newTask;
+    private Task curTask;
+
     private String title;
+    private int status;
     private String detail;
     private int tag;
     private String deadLine;
-    private boolean remind;
+    private boolean isRemind;
     private String dateToRemind;
 
     private EditText mTaskTitle;
@@ -35,6 +38,8 @@ public class Edit_Task extends AppCompatActivity {
     private EditText mDdlDate;
     private CheckBox mIsRemind;
     private EditText mRemind_date;
+
+    private TaskRepository mTaskRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,49 +54,59 @@ public class Edit_Task extends AppCompatActivity {
         mRemind_date = findViewById(R.id.remind_date);
 
         Intent intent = getIntent();
-        Task curTask = (Task) intent.getSerializableExtra(MainActivity.TEXT_SEND);
+        if (intent.hasExtra(MainActivity.TEXT_SEND)){
+            curTask = (Task) intent.getParcelableExtra(MainActivity.TEXT_SEND);
+            setTaskProperties(curTask);
+        }
+    }
+
+    public void editCurTask(View view) {
+
+        mTaskTitle = findViewById(R.id.task_title);
+        mTaskDetail = findViewById(R.id.task_detail);
+        mTagSpinner = findViewById(R.id.tagSponner);
+        mDdlDate = (EditText) findViewById(R.id.ddl_date);
+        mIsRemind = findViewById(R.id.isRemind);
+        mRemind_date = findViewById(R.id.remind_date);
+
+        mTaskRepository = new TaskRepository(this);
+
+        if (!mTaskTitle.getText().toString().equals("")) {
+            title = mTaskTitle.getText().toString();
+            detail = mTaskDetail.getText().toString();
+            tag = mTagSpinner.getSelectedItemPosition();
+            deadLine = mDdlDate.getText().toString();
+            isRemind = mIsRemind.isChecked();
+            dateToRemind = null;
+
+            int remindMark = 0;
+            if (isRemind) {
+                remindMark = 1;
+                dateToRemind = mRemind_date.getText().toString();
+            }
+            newTask = new Task(title, status, detail, tag, deadLine, remindMark, dateToRemind);
+            Log.d(LOG_TAG, newTask.toString());
+            Log.d(LOG_TAG, "Edited Task save successful");
+            Log.d(LOG_TAG, "-------");
+            updateEditedTask();
+            Log.d(LOG_TAG, "End EditTask");
+
+            finish();
+        }
+    }
+
+    private void setTaskProperties(Task curTask){
         mTaskTitle.setText(curTask.getTitle());
         mTaskDetail.setText(curTask.getDetail());
         mTagSpinner.setSelection(curTask.getTagPosition());
-        java.text.SimpleDateFormat input_formatter = new SimpleDateFormat( "MM-dd-yyyy");
-        mDdlDate.setText(reformatInputDateString(input_formatter.format(curTask.getDeadLine())));
-        if (curTask.getIsRemind() == 1){
-            mIsRemind.setSelected(true);
-            mRemind_date.setText(reformatInputDateString(input_formatter.format(curTask.getDateToRemind())));
+        mDdlDate.setText(curTask.getDeadLine());
+        if (toBoolean(curTask.getIsRemind())) {
+            mIsRemind.setChecked(true);
+            mRemind_date.setText(curTask.getDateToRemind());
         } else {
-            mIsRemind.setSelected(false);
+            mIsRemind.setChecked(false);
         }
-
-    }
-
-    public void editCurTask(View view) throws ParseException {
-//        if (mTaskTitle.getText() != null) {
-//            title = mTaskTitle.getText().toString();
-//            detail = mTaskDetail.getText().toString();
-//            tag = mTagSpinner.getSelectedItemPosition();
-//            deadLine = mDdlDate.getText().toString();
-//            remind = mIsRemind.isChecked();
-//            dateToRemind = mRemind_date.getText().toString();
-//
-//            java.text.SimpleDateFormat output_formatter = new SimpleDateFormat( "MM-dd-yyyy");
-//            Date deadLine_date =  output_formatter.parse(reformatOutputDateString(deadLine));
-//            Date remind_date = null;
-//            if (remind)
-//                remind_date =  output_formatter.parse(reformatOutputDateString(dateToRemind));
-//
-//            Task newTask = new Task(title, detail, tag, deadLine_date, remind, remind_date);
-//
-//            Log.d(LOG_TAG, newTask.toString());
-//
-//            Log.d(LOG_TAG, "New Task create successful");
-//            Log.d(LOG_TAG, "-------");
-//
-//            Intent replyIntent = new Intent();
-//            replyIntent.putExtra(EXTRA_REPLY, newTask);
-//            setResult(RESULT_OK, replyIntent);
-//            Log.d(LOG_TAG, "End Create new Task");
-//            finish();
-//        }
+        status = curTask.getStatus();
     }
 
     public void cancelEdit(View view) {
@@ -99,10 +114,22 @@ public class Edit_Task extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private String reformatInputDateString(String initial){
+    private void updateEditedTask(){
+        mTaskRepository.deleteTask(curTask);
+        mTaskRepository.insertTask(newTask);
+    }
+
+    private String reformatInputDateString(String initial) {
         return initial.replaceAll("-", "/");
     }
-    private String reformatOutputDateString(String initial){
+
+    private String reformatOutputDateString(String initial) {
         return initial.replaceAll("/", "-");
+    }
+
+    private boolean toBoolean(int i){
+        if (i == 1)
+            return true;
+        return false;
     }
 }
