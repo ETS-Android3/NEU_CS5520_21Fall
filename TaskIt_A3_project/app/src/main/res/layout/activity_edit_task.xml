@@ -7,7 +7,7 @@
     tools:context=".Utils.Edit_Task">
     <EditText
         android:id="@+id/task_title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -22,7 +22,7 @@
 
     <EditText
         android:id="@+id/task_detail"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -36,8 +36,8 @@
         app:layout_constraintTop_toBottomOf="@+id/task_title" />
 
     <Spinner
-        android:id="@+id/tagSponner"
-        android:layout_width="0dp"
+        android:id="@+id/tagSpinner"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -50,7 +50,7 @@
 
     <EditText
         android:id="@+id/ddl_date"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -61,7 +61,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagSponner" />
+        app:layout_constraintTop_toBottomOf="@+id/tagSpinner" />
 
     <CheckBox
         android:id="@+id/isRemind"

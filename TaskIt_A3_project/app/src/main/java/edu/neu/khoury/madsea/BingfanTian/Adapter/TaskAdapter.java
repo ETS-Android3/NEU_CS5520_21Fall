@@ -1,31 +1,26 @@
 package edu.neu.khoury.madsea.BingfanTian.Adapter;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.neu.khoury.madsea.BingfanTian.Utils.MainActivity;
 import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
+import edu.neu.khoury.madsea.BingfanTian.Utils.MainActivity;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder>
         implements View.OnClickListener{
 
     private List<Task> mTaskList = new ArrayList<>();
     private MainActivity activity;
-    private final java.text.SimpleDateFormat formatter =
-            new SimpleDateFormat( "EEE MM-dd-yyyy");
     private OnItemClickListener mOnItemClickListener;
 
     public TaskAdapter(List<Task> taskList, OnItemClickListener onItemClickListener){

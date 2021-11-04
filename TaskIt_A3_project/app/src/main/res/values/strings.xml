@@ -13,4 +13,5 @@
     <string name="sample_task_date">Here will be a date</string>
 
     <string name="title">Title</string>
+    <string name="select_deadline">Select Deadline</string>
 </resources>

@@ -1,5 +1,9 @@
 package edu.neu.khoury.madsea.BingfanTian.Utils;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -7,16 +11,12 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import edu.neu.khoury.madsea.BingfanTian.Adapter.TaskAdapter;
 import edu.neu.khoury.madsea.BingfanTian.Database.TaskRepository;
+import edu.neu.khoury.madsea.BingfanTian.Database.TaskViewModel;
 import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
     private TaskAdapter mTasksAdapter;
     private List<Task> mTasksList;
     private TaskRepository mTaskRepository;
+    private TaskViewModel mTaskViewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
         mTasksRecyclerView = findViewById(R.id.task_list);
 
         mTaskRepository = new TaskRepository(this);
+
         initRecyclerView();
         retrieveTasks();
     }
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
     }
 
     private void retrieveTasks(){
-        mTaskRepository.retrieveTasks().observe(this, new Observer<List<Task>>() {
+        mTaskRepository.getAllTasks().observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(@NonNull List<Task> tasks) {
                 if (mTasksList.size() > 0){
@@ -82,10 +85,10 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
     }
 
 
-    private void deleteTask(Task task){
-        mTasksList.remove(task);
+    private void deleteTask(int id){
+        mTasksList.remove(id);
         mTasksAdapter.notifyDataSetChanged();
-        mTaskRepository.deleteTask(task);
+        mTaskRepository.deleteTaskById(id);
     }
 
     private ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            deleteTask(mTasksList.get(viewHolder.getAdapterPosition()));
+            deleteTask(viewHolder.getAdapterPosition());
         }
     };
 }

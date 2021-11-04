@@ -8,12 +8,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.text.SimpleDateFormat;
-
 @Entity(tableName = "task_table")
 public class Task implements Parcelable {
 
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     private int id;
 
     @NonNull
@@ -41,11 +40,8 @@ public class Task implements Parcelable {
     @ColumnInfo(name = "dateToRemind")
     private String dateToRemind;
 
-
-//    private final java.text.SimpleDateFormat formatter = new SimpleDateFormat( "MM-dd-yyyy");
-
-
-    public Task(@NonNull String title, int status, String detail, int tagPosition, @NonNull String deadLine, int isRemind, String dateToRemind) {
+    public Task(@NonNull String title, int status, String detail, int tagPosition,
+                @NonNull String deadLine, int isRemind, String dateToRemind) {
         this.title = title;
         this.status = status;
         this.detail = detail;
@@ -85,7 +81,6 @@ public class Task implements Parcelable {
     public void setId(int id) {
         this.id = id;
     }
-
 
     public int getStatus() {
         return status;

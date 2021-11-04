@@ -2,11 +2,9 @@ package edu.neu.khoury.madsea.BingfanTian.Database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-import androidx.room.Update;
 
 import java.util.List;
 
@@ -15,21 +13,31 @@ import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 @Dao
 public interface TaskDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    void insert(Task... task);
+    @Query("delete from task_table where id = " +
+            "(select id from (select id from task_table order by id limit :id,1) as t)")
+    void deleteTaskById(int id);
 
-    @Query("DELETE FROM task_table")
+    @Query("delete from task_table")
     void deleteAll();
 
-    @Query("SELECT * FROM task_table")
+    @Query("select * from task_table where id = " +
+            "(select id from (select id from task_table order by id limit :id,1) as t)")
+    Task findTaskById(int id);
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void insert(Task task);
+
+    @Query("select * from task_table order by id")
     LiveData<List<Task>> getAllTasks();
 
-    @Query("SELECT * FROM task_table WHERE title = :title")
-    List<Task> getTaskByTitle(String title);
+    @Query("update task_table set title=:title, detail =:details, " +
+            "tagPosition =:tag, deadLine =:deadline, status =:status where id =:index")
+    void updateTask(String title, String details, int tag, String deadline, int status, int index);
 
-    @Delete
-    int deleteTask(Task... task);
+    @Query("select id from task_table limit 1")
+    int getFirstIndex();
 
-    @Update
-    int update(Task... task);
+    @Query("update task_table set status = not status where id =" +
+            "(select id from (select id from task_table order by id limit :id,1) as t)")
+    void updateStatus(int id);
 }
