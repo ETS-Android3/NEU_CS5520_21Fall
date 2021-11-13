@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Activity 3 Todo list app part 3"
-date: 2021-11-3
+date: 2021-11-03
 ---
 
 
