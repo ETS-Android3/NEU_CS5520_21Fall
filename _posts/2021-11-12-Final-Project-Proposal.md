@@ -8,8 +8,8 @@ After the Todo App check-in meeting, I decided to spend some extra time research
 
 The following are some brief thoughts, which will be supplemented with the information I found and feasibility analysis in the follow-up.
 
-> 1.Material Design UX
-> 2. Implement search to-dos
-> 3. Delete confirmation or cancellation
-> 4. Redesign the user interface
-> 5. Deploy a cloud database to store data
+- Material Design UX
+- Implement search to-dos
+- Delete confirmation or cancellation
+- Redesign the user interface
+- Deploy a cloud database to store data
