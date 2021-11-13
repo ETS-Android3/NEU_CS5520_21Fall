@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,6 +24,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 import edu.neu.khoury.madsea.BingfanTian.Database.TaskRepository;
+import edu.neu.khoury.madsea.BingfanTian.Database.TaskViewModel;
 import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
@@ -56,6 +58,7 @@ public class New_Task extends AppCompatActivity {
     private EditText mRemind_date;
 
     private TaskRepository mTaskRepository;
+    private TaskViewModel mTaskViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,7 @@ public class New_Task extends AppCompatActivity {
                 showDateDialog(mRemind_date);
             }
         });
+        mTaskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
     }
 
     private void showDateDialog(EditText mDdlDate) {
@@ -143,8 +147,7 @@ public class New_Task extends AppCompatActivity {
             }
 
             newTask = new Task(title, 0, detail, tag, deadLine, remindMark, dateToRemind);
-            //
-//            startAlarm(dateToRemind);
+
             Log.d(LOG_TAG, newTask.toString());
             Log.d(LOG_TAG, "New Task create successful");
             Log.d(LOG_TAG, "-------");
@@ -164,8 +167,8 @@ public class New_Task extends AppCompatActivity {
                         - System.currentTimeMillis();
             }
 
-//            mTaskViewModel.setReminder(delay, title_task.getText().toString(),
-//                    details_task.getText().toString());
+            mTaskViewModel.setReminder(delay, mTaskTitle.getText().toString(),
+                    mTaskDetail.getText().toString());
 
             Log.d(LOG_TAG, "End Create new Task");
             finish();

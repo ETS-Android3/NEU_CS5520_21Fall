@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/task_title" />
 
     <Spinner
-        android:id="@+id/tagSponner"
+        android:id="@+id/tagSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -62,7 +62,7 @@
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tagSponner" />
+        app:layout_constraintTop_toBottomOf="@+id/tagSpinner" />
 
     <CheckBox
         android:id="@+id/isRemind"
