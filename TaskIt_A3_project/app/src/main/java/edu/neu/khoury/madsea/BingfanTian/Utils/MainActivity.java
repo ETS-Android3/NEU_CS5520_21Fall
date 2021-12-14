@@ -1,10 +1,12 @@
 package edu.neu.khoury.madsea.BingfanTian.Utils;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -54,6 +56,13 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
     @Override
     public void onItemClick(int position) {
         Task curTask = mTasksList.get(position);
+        Intent intent = new Intent(this, Task_Detail.class);
+        intent.putExtra(TEXT_SEND, curTask);
+        startActivity(intent);
+    }
+
+    public void editTask(int position) {
+        Task curTask = mTasksList.get(position);
         Intent intent = new Intent(this, Edit_Task.class);
         intent.putExtra(TEXT_SEND, curTask);
         startActivity(intent);
@@ -79,7 +88,8 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
         mTasksRecyclerView.setLayoutManager(linearLayoutManager);
         VerticalSpacingItemDecorator itemDecorator = new VerticalSpacingItemDecorator(20);
         mTasksRecyclerView.addItemDecoration(itemDecorator);
-        new ItemTouchHelper(itemTouchHelperCallBack).attachToRecyclerView(mTasksRecyclerView);
+        new ItemTouchHelper(itemTouchHelperDeleteCallBack).attachToRecyclerView(mTasksRecyclerView);
+        new ItemTouchHelper(itemTouchHelperEditCallBack).attachToRecyclerView(mTasksRecyclerView);
         mTasksAdapter = new TaskAdapter(mTasksList, this);
         mTasksRecyclerView.setAdapter(mTasksAdapter);
     }
@@ -91,7 +101,8 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
         mTaskRepository.deleteTaskById(id);
     }
 
-    private ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+    private ItemTouchHelper.SimpleCallback itemTouchHelperDeleteCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             return false;
@@ -99,7 +110,54 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            deleteTask(viewHolder.getAdapterPosition());
+            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+            dialog.setTitle("Do you want to delete this todo task?");
+            dialog.setMessage("Deleted tasks cannot be restored!");
+            dialog.setCancelable(false);
+            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    deleteTask(viewHolder.getAdapterPosition());
+                }
+            });
+            dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    mTasksAdapter.notifyDataSetChanged();
+                }
+            });
+            dialog.show();
         }
+
+    };
+
+
+    private ItemTouchHelper.SimpleCallback itemTouchHelperEditCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+            dialog.setTitle("Do you want to edit this todo task?");
+            dialog.setCancelable(false);
+            dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    editTask(viewHolder.getAdapterPosition());
+                }
+            });
+            dialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    mTasksAdapter.notifyDataSetChanged();
+                }
+            });
+            dialog.show();
+        }
+
     };
 }

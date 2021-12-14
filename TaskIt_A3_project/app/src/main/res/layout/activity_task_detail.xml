@@ -4,41 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Utils.New_Task">
+    tools:context=".Utils.Task_Detail">
 
-    <EditText
+    <TextView
         android:id="@+id/task_title"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/title_text"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/task_detail"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/details_text"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_title" />
 
     <Spinner
         android:id="@+id/tagSpinner"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -49,17 +47,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/task_detail" />
 
-    <EditText
+    <TextView
         android:id="@+id/ddl_date"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/deadline_text"
-        android:inputType="date"
         android:minHeight="48dp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tagSpinner" />
@@ -74,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ddl_date" />
 
-    <EditText
+    <TextView
         android:id="@+id/remind_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -82,27 +79,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/remind_day_text"
-        android:inputType="date"
         android:minHeight="48dp"
+        android:textSize="20dp"
         android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isRemind" />
-
-
-    <Button
-        android:id="@+id/save_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_weight="1"
-        android:text="@string/save_text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cancel_button"
-        android:onClick="createNewTask"/>
 
     <Button
         android:id="@+id/cancel_button"
@@ -110,30 +92,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:layout_weight="1"
-        android:text="@string/cancel_text"
+        android:onClick="cancelEdit"
+        android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/save_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="cancelCreate"/>
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/next_button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:text="next" />-->
-
-<!--    <com.google.android.material.button.MaterialButton-->
-<!--        android:id="@+id/cancel_button"-->
-<!--        style="@style/Widget.MaterialComponents.Button.TextButton"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="12dp"-->
-<!--        android:layout_marginRight="12dp"-->
-<!--        android:layout_toStartOf="@id/next_button"-->
-<!--        android:layout_toLeftOf="@id/next_button"-->
-<!--        android:text="@string/shr_button_cancel" />-->
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskIt">
         <activity
+            android:name=".Utils.Task_Detail"
+            android:exported="true" />
+        <activity
             android:name=".Utils.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -34,8 +37,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Utils.MainActivity" />
         </activity>
-
-<!--        <receiver android:name=".Notification.AlertReceiver"/>-->
     </application>
 
 </manifest>

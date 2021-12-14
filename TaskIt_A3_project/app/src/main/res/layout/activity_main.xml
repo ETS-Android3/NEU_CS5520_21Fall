@@ -12,16 +12,29 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:text="Tasks"
         android:textSize="32sp"
         android:textStyle="bold" />
+
+    <SearchView
+        android:id="@+id/search_bar"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/tesksText"
+        android:queryHint="Please enter your task title."
+        android:text="Search your task" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tesksText"
+        android:layout_below="@+id/search_bar"
+        android:layout_marginTop="16dp"
         android:nestedScrollingEnabled="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
