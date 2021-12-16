@@ -31,8 +31,10 @@ public interface TaskDao {
     LiveData<List<Task>> getAllTasks();
 
     @Query("update task_table set title=:title, detail =:details, " +
-            "tagPosition =:tag, deadLine =:deadline, status =:status where id =:index")
-    void updateTask(String title, String details, int tag, String deadline, int status, int index);
+            "tagPosition =:tag, deadLine =:deadline, isRemind =:isRemind, " +
+            "dateToRemind =:dateToRemind where id =:index")
+    void updateTask(String title, String details, int tag, String deadline, int isRemind,
+                    String dateToRemind, int index);
 
     @Query("select id from task_table limit 1")
     int getFirstIndex();
@@ -40,4 +42,7 @@ public interface TaskDao {
     @Query("update task_table set status = not status where id =" +
             "(select id from (select id from task_table order by id limit :id,1) as t)")
     void updateStatus(int id);
+
+    @Query("select * from task_table where title like '%' || :key || '%'order by id")
+    LiveData<List<Task>> getKeyTasks(String key);
 }

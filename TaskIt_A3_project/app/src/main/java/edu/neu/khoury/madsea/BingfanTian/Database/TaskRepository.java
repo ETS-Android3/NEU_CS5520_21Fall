@@ -61,7 +61,7 @@ public class TaskRepository {
     public void update(Task task, int index) {
         TaskDatabase.databaseWriteExecutor.execute(() -> {
             taskDao.updateTask(task.getTitle(), task.getDetail(), task.getTagPosition(), task.getDeadLine()
-                    , task.getStatus(), index);
+                    , task.getIsRemind(), task.getDateToRemind(), index);
         });
     }
 
@@ -81,5 +81,9 @@ public class TaskRepository {
         TaskDatabase.databaseWriteExecutor.execute(() -> {
             taskDao.updateStatus(position);
         });
+    }
+
+    public LiveData<List<Task>> getKeyTasks(String key){
+        return taskDao.getKeyTasks(key);
     }
 }

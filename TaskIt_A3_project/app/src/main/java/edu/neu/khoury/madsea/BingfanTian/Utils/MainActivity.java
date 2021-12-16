@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -18,7 +19,6 @@ import java.util.List;
 
 import edu.neu.khoury.madsea.BingfanTian.Adapter.TaskAdapter;
 import edu.neu.khoury.madsea.BingfanTian.Database.TaskRepository;
-import edu.neu.khoury.madsea.BingfanTian.Database.TaskViewModel;
 import edu.neu.khoury.madsea.BingfanTian.Models.Task;
 import edu.neu.khoury.madsea.BingfanTian.R;
 
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
     private TaskAdapter mTasksAdapter;
     private List<Task> mTasksList;
     private TaskRepository mTaskRepository;
-    private TaskViewModel mTaskViewModel;
+    private SearchView mSearchView;
 
 
     @Override
@@ -44,7 +44,33 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
 
         mTaskRepository = new TaskRepository(this);
 
+        mSearchView = findViewById(R.id.search_bar);
+
         initRecyclerView();
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                retrieveKeyTasks(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                retrieveTasks();
+                return false;
+            }
+
+        });
+
+        mSearchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                retrieveTasks();
+                return false;
+            }
+        });
+
         retrieveTasks();
     }
 
@@ -70,6 +96,21 @@ public class MainActivity extends AppCompatActivity implements TaskAdapter.OnIte
 
     private void retrieveTasks(){
         mTaskRepository.getAllTasks().observe(this, new Observer<List<Task>>() {
+            @Override
+            public void onChanged(@NonNull List<Task> tasks) {
+                if (mTasksList.size() > 0){
+                    mTasksList.clear();
+                }
+                if (tasks != null){
+                    mTasksList.addAll(tasks);
+                }
+                mTasksAdapter.notifyDataSetChanged();
+            }
+        });
+    }
+
+    private void retrieveKeyTasks(String key){
+        mTaskRepository.getKeyTasks(key).observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(@NonNull List<Task> tasks) {
                 if (mTasksList.size() > 0){

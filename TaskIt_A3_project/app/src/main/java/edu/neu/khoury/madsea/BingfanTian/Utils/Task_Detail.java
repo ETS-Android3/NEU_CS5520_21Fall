@@ -36,6 +36,7 @@ public class Task_Detail extends AppCompatActivity {
     private TextView mDdlDate;
     private CheckBox mIsRemind;
     private TextView mRemind_date;
+    private TextView mRemind_date_title;
 
     private TaskRepository mTaskRepository;
 
@@ -50,6 +51,7 @@ public class Task_Detail extends AppCompatActivity {
         mDdlDate = findViewById(R.id.ddl_date);
         mIsRemind = findViewById(R.id.isRemind);
         mRemind_date = findViewById(R.id.remind_date);
+        mRemind_date_title = findViewById(R.id.rmd_date_title);
 
         Intent intent = getIntent();
         if (intent.hasExtra(MainActivity.TEXT_SEND)){
@@ -73,6 +75,7 @@ public class Task_Detail extends AppCompatActivity {
             mRemind_date.setText(curTask.getDateToRemind());
         } else {
             mIsRemind.setChecked(false);
+            mRemind_date_title.setVisibility(View.INVISIBLE);
         }
         status = curTask.getStatus();
         edit_index = curTask.getId();

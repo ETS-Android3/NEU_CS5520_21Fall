@@ -7,7 +7,7 @@
     tools:context=".Utils.MainActivity">
 
     <TextView
-        android:id="@+id/tesksText"
+        android:id="@+id/tasksText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -25,9 +25,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
-        android:layout_toEndOf="@+id/tesksText"
-        android:queryHint="Please enter your task title."
-        android:text="Search your task" />
+        android:layout_toEndOf="@+id/tasksText"
+        android:queryHint="Search your task"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_list"
